@@ -1,6 +1,11 @@
 <script>
-  let checked = false;
-  let value = 100;
+  let checked = [false];
+  $: value =
+    checked.filter((b) => {
+      if (!!b) {
+        return b;
+      }
+    }).length * 100;
 </script>
 
 <div class="progress-bar">
@@ -9,7 +14,8 @@
 
 <div>
   <label>
-    <input type="checkbox" bind:checked />{checked}
+    <input type="checkbox" bind:checked={checked[0]} />
+    {checked[0]}
   </label>
 </div>
 
