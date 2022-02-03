@@ -1,9 +1,16 @@
 <script>
+  let checked = false;
   let value = 100;
 </script>
 
 <div class="progress-bar">
   <div class="progress-status" style="width: {value}%" />
+</div>
+
+<div>
+  <label>
+    <input type="checkbox" bind:checked />{checked}
+  </label>
 </div>
 
 <style>
