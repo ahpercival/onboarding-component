@@ -6,6 +6,7 @@
     }
   });
   $: value = (100 / progressState.length) * completedItems.length;
+  $: disabled = value === 100;
 </script>
 
 <div class="progress-bar">
@@ -24,6 +25,8 @@
     {progressState[1]}
   </label>
 </div>
+{value === 100}
+<button {disabled}>Continue</button>
 
 <style>
   .progress-bar {
