@@ -13,18 +13,14 @@
   <div class="progress-status" style="width: {value}%" />
 </div>
 
-<div>
-  <label>
-    <input type="checkbox" bind:checked={progressState[0]} />
-    {progressState[0]}
-  </label>
-</div>
-<div>
-  <label>
-    <input type="checkbox" bind:checked={progressState[1]} />
-    {progressState[1]}
-  </label>
-</div>
+{#each progressState as bool}
+  <div>
+    <label>
+      <input type="checkbox" bind:checked={bool} />
+      {bool}
+    </label>
+  </div>
+{/each}
 
 <button {disabled}>Continue</button>
 
