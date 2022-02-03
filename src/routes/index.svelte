@@ -1,11 +1,11 @@
 <script>
-  let checked = [false];
-  $: value =
-    checked.filter((b) => {
-      if (!!b) {
-        return b;
-      }
-    }).length * 100;
+  let progressState = [false, false];
+  $: completedItems = progressState.filter((b) => {
+    if (!!b) {
+      return b;
+    }
+  });
+  $: value = (100 / progressState.length) * completedItems.length;
 </script>
 
 <div class="progress-bar">
@@ -14,8 +14,14 @@
 
 <div>
   <label>
-    <input type="checkbox" bind:checked={checked[0]} />
-    {checked[0]}
+    <input type="checkbox" bind:checked={progressState[0]} />
+    {progressState[0]}
+  </label>
+</div>
+<div>
+  <label>
+    <input type="checkbox" bind:checked={progressState[1]} />
+    {progressState[1]}
   </label>
 </div>
 
