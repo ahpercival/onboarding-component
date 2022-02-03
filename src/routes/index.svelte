@@ -1,4 +1,5 @@
 <script>
+  import ProgressBar from "../components/progressBar.svelte";
   let progressState = [false, false];
   $: completedItems = progressState.filter((b) => {
     if (!!b) {
@@ -9,10 +10,7 @@
   $: disabled = value !== 100;
 </script>
 
-<div class="progress-bar">
-  <div class="progress-status" style="width: {value}%" />
-</div>
-
+<ProgressBar {value} />
 {#each progressState as bool}
   <div>
     <label>
@@ -23,15 +21,3 @@
 {/each}
 
 <button {disabled}>Continue</button>
-
-<style>
-  .progress-bar {
-    height: 5px;
-    width: 100%;
-  }
-  .progress-status {
-    height: 100%;
-    background-color: hsla(173, 56%, 44%, 1);
-    transition: width 0.5s;
-  }
-</style>
