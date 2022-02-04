@@ -1,10 +1,11 @@
 <script>
   export let checked = false;
+  export let label = "";
 </script>
 
 <div>
   <label>
     <input type="checkbox" bind:checked />
-    {checked}
+    {label}
   </label>
 </div>
