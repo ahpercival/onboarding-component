@@ -38,15 +38,30 @@
   $: disabled = value !== 100;
 </script>
 
-<ProgressBar {value} />
-<h3>Welcome to Beyonk</h3>
-<p>
-  Selling tickets has never been easier. Follow our simple checklist below to
-  finish your set-up with Beyonk.
-</p>
+<div class="onboarding-container">
+  <ProgressBar {value} />
+  <div class="checklist-container">
+    <h3>Welcome to Beyonk</h3>
+    <p>
+      Selling tickets has never been easier. Follow our simple checklist below
+      to finish your set-up with Beyonk.
+    </p>
 
-{#each progessValues as { checked, label, text }}
-  <CheckBox bind:checked {label} {text} />
-{/each}
+    {#each progessValues as { checked, label, text }}
+      <CheckBox bind:checked {label} {text} />
+    {/each}
 
-<button {disabled}>Proceed</button>
+    <button {disabled}>Proceed</button>
+  </div>
+</div>
+
+<style>
+  .onboarding-container {
+    background-color: #f4f5f7;
+    font-family: "Cabin", "Trebuchet MS", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .checklist-container {
+    padding: 3rem;
+    color: hsla(0, 0%, 40%, 1);
+  }
+</style>
