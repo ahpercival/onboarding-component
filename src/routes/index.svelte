@@ -1,10 +1,13 @@
 <script>
   import ProgressChecklist from "../components/progress-checklist.svelte";
 
-  let display = "block";
+  let display = "none";
+  let openPopUp = () => {
+    display = "block";
+  };
 </script>
 
-<button class="popup-button">Open</button>
+<button class="popup-button" on:click={openPopUp}>Open</button>
 
 <div class="progress-popup" style="display: {display};">
   <div class="form-container">
