@@ -1,10 +1,12 @@
 <script>
   import ProgressChecklist from "../components/progress-checklist.svelte";
+
+  let display = "block";
 </script>
 
 <button class="popup-button">Open</button>
 
-<div class="chat-popup">
+<div class="progress-popup" style="display: {display};">
   <div class="form-container">
     <ProgressChecklist />
   </div>
@@ -29,8 +31,7 @@
     cursor: pointer;
   }
 
-  .chat-popup {
-    /* display: none; */
+  .progress-popup {
     z-index: 9;
     position: fixed;
     bottom: 0;
