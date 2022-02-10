@@ -2,7 +2,15 @@
   import ProgressBar from "../components/progressBar.svelte";
   import LaunchButton from "../components/launchButton.svelte";
   import PopupContent from "../components/popupContent.svelte";
+  import ProgressStore from "../stores/progress-data";
 
+  let progressData;
+
+  ProgressStore.subscribe((data) => {
+    progressData = data;
+  });
+
+  let onboarded = !progressData.progress.onboarded ? "block" : "none";
   let display = "none";
 
   let handlePopUp = () => {
@@ -14,14 +22,15 @@
   };
 </script>
 
-<div class="form-container">
-  <div class="progress-popup" style="display: {display};">
-    <ProgressBar />
-    <PopupContent {handlePopUp} />
+<div style="display: {onboarded};">
+  <div class="form-container">
+    <div class="progress-popup" style="display: {display};">
+      <ProgressBar />
+      <PopupContent {handlePopUp} />
+    </div>
   </div>
+  <LaunchButton {handlePopUp} />
 </div>
-
-<LaunchButton {handlePopUp} />
 
 <style>
   .form-container {
