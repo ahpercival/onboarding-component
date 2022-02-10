@@ -12,20 +12,42 @@
 
 {#each progessValues as { checked, label, text }}
   <div class="checklist">
-    <label class="checklist-label">
-      <input type="checkbox" bind:checked />
+    <label
+      class="checklist-label"
+      style="color: {!checked
+        ? 'hsla(173, 56%, 44%, 1)'
+        : 'hsla(0, 0%, 40%, 1)'}"
+    >
+      <input class="checkbox" type="checkbox" bind:checked />
       {label}
+      <span class="tick" style="display: {!checked ? 'none' : 'block'};">
+        ✓</span
+      >
     </label>
-    <p>{text}</p>
+    <p
+      class="checklist-text"
+      style="color: {!checked ? 'hsla(0, 0%, 14%, 1)' : 'hsla(0, 0%, 48%, 1)'}"
+    >
+      {text}
+    </p>
   </div>
 {/each}
 
 <style>
-  .checklist {
-    margin: auto 1rem;
+  .checklist-label {
+    display: flex;
   }
 
-  .checklist-label {
+  .checklist-text {
+    font-size: 14px;
+  }
+
+  .checkbox {
+    display: none;
+  }
+
+  .tick {
+    margin: 0 0.5rem;
     color: hsla(173, 56%, 44%, 1);
   }
 </style>
