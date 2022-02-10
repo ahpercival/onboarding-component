@@ -18,7 +18,7 @@
         ? 'hsla(173, 56%, 44%, 1)'
         : 'hsla(0, 0%, 40%, 1)'}"
     >
-      <input class="checkbox" type="checkbox" bind:checked />
+      <input class="checkbox" type="checkbox" />
       {label}
       <span class="tick" style="display: {!checked ? 'none' : 'block'};">
         ✓</span
