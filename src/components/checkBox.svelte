@@ -1,16 +1,24 @@
 <script>
-  export let checked = false;
-  export let label = "";
-  export let text = "";
+  import ChecklistStore from "../stores/checklist-data";
+
+  let progressState;
+
+  ChecklistStore.subscribe((data) => {
+    progressState = data;
+  });
+
+  $: progessValues = Object.values(progressState);
 </script>
 
-<div class="checklist">
-  <label class="checklist-label">
-    <input type="checkbox" bind:checked />
-    {label}
-  </label>
-  <p>{text}</p>
-</div>
+{#each progessValues as { checked, label, text }}
+  <div class="checklist">
+    <label class="checklist-label">
+      <input type="checkbox" bind:checked />
+      {label}
+    </label>
+    <p>{text}</p>
+  </div>
+{/each}
 
 <style>
   .checklist {

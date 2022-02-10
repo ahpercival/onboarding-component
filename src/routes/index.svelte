@@ -1,28 +1,7 @@
 <script>
   import ProgressBar from "../components/progressBar.svelte";
   import CheckBox from "../components/checkBox.svelte";
-  let progressState = {
-    one: {
-      checked: false,
-      label: "Complete your company profile",
-      text: "Upload your logo, pin your location, add a phone and description and you're all set!",
-    },
-    two: {
-      checked: false,
-      label: "Create your first experience",
-      text: "Follow the easy step-by-step guide to create a compelling experience that sells.",
-    },
-    three: {
-      checked: false,
-      label: "Link your payment account",
-      text: "Connect via Stripe to get paid when you sell tickets.",
-    },
-    four: {
-      checked: false,
-      label: "Set your cancellation policy",
-      text: "Choose between 'Flexible', 'Moderate' or set a Custom policy",
-    },
-  };
+
   let display = "none";
   let popupControl = "+";
   let popupTitle = "Onboarding Progress";
@@ -38,22 +17,10 @@
       popupTitle = "Onboarding Progress";
     }
   };
-
-  $: progessValues = Object.values(progressState);
-  $: progessStatus = progessValues.reduce((acc, val) => {
-    acc.push(val.checked);
-    return acc;
-  }, []);
-  $: completedItems = progessStatus.filter((b) => {
-    if (!!b) {
-      return b;
-    }
-  });
-  $: value = (100 / progessStatus.length) * completedItems.length;
 </script>
 
 <div class="progress-popup">
-  <ProgressBar {value} />
+  <ProgressBar />
   <button class="popup-button" on:click={handlePopUp}>{popupControl}</button>
   <h3>{popupTitle}</h3>
   <div class="form-container" style="display: {display};">
@@ -62,10 +29,7 @@
         Selling tickets has never been easier. Follow our simple checklist below
         to finish your set-up with Beyonk.
       </p>
-
-      {#each progessValues as { checked, label, text }}
-        <CheckBox bind:checked {label} {text} />
-      {/each}
+      <CheckBox />
     </div>
   </div>
 </div>

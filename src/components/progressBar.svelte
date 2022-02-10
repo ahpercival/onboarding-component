@@ -1,5 +1,23 @@
 <script>
-  export let value = 0;
+  import ChecklistStore from "../stores/checklist-data";
+
+  let progressState;
+
+  ChecklistStore.subscribe((data) => {
+    progressState = data;
+  });
+
+  $: progessValues = Object.values(progressState);
+  $: progessStatus = progessValues.reduce((acc, val) => {
+    acc.push(val.checked);
+    return acc;
+  }, []);
+  $: completedItems = progessStatus.filter((b) => {
+    if (!!b) {
+      return b;
+    }
+  });
+  $: value = (100 / progessStatus.length) * completedItems.length;
 </script>
 
 <div class="progress-bar">
