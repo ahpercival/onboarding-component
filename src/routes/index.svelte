@@ -12,13 +12,8 @@
 
   let onboarded = !progressData.progress.onboarded ? "block" : "none";
   let display = "none";
-
   let handlePopUp = () => {
-    if (display === "none") {
-      display = "block";
-    } else if (display === "block") {
-      display = "none";
-    }
+    display === "none" ? (display = "block") : (display = "none");
   };
 </script>
 
