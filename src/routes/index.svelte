@@ -50,7 +50,6 @@
     }
   });
   $: value = (100 / progessStatus.length) * completedItems.length;
-  $: disabled = value !== 100;
 </script>
 
 <div class="progress-popup">
@@ -67,8 +66,6 @@
       {#each progessValues as { checked, label, text }}
         <CheckBox bind:checked {label} {text} />
       {/each}
-
-      <button {disabled}>Proceed</button>
     </div>
   </div>
 </div>
