@@ -1,28 +1,24 @@
 <script>
   import ProgressBar from "../components/progressBar.svelte";
   import CheckBox from "../components/checkBox.svelte";
+  import LaunchButton from "../components/launchButton.svelte";
 
   let display = "none";
-  let popupControl = "+";
-  let popupTitle = "Onboarding Progress";
 
   let handlePopUp = () => {
     if (display === "none") {
       display = "block";
-      popupControl = "-";
-      popupTitle = "Welcome To Beyonk";
     } else if (display === "block") {
       display = "none";
-      popupControl = "+";
-      popupTitle = "Onboarding Progress";
     }
   };
 </script>
 
+<LaunchButton {handlePopUp} />
+
 <div class="progress-popup">
   <ProgressBar />
-  <button class="popup-button" on:click={handlePopUp}>{popupControl}</button>
-  <h3>{popupTitle}</h3>
+  <h3>Welcome To Beyonk</h3>
   <div class="form-container" style="display: {display};">
     <div class="checklist-container">
       <p>
@@ -35,22 +31,6 @@
 </div>
 
 <style>
-  .popup-button {
-    background-color: transparent;
-    color: hsla(173, 56%, 44%, 1);
-    border: solid 1px hsla(173, 56%, 44%, 1);
-    border-radius: 0.4rem;
-    font-size: 1rem;
-    line-height: 1.1;
-    padding: 0.4rem 1rem;
-  }
-
-  .popup-button:hover {
-    cursor: pointer;
-    background-color: hsla(173, 56%, 44%, 1);
-    color: #fff;
-  }
-
   .progress-popup {
     z-index: 9;
     position: fixed;
