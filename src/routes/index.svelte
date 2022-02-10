@@ -14,8 +14,6 @@
   };
 </script>
 
-<LaunchButton {handlePopUp} />
-
 <div class="progress-popup">
   <ProgressBar />
   <h3>Welcome To Beyonk</h3>
@@ -29,6 +27,8 @@
     </div>
   </div>
 </div>
+
+<LaunchButton {handlePopUp} />
 
 <style>
   .progress-popup {
