@@ -17,7 +17,7 @@
 <div class="form-container">
   <div class="progress-popup" style="display: {display};">
     <ProgressBar />
-    <PopupContent />
+    <PopupContent {handlePopUp} />
   </div>
 </div>
 
