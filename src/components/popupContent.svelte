@@ -1,12 +1,12 @@
 <script>
   import CheckBox from "../components/checkBox.svelte";
-  export let handlePopUp = () => {};
+  export let handlePopUp;
 </script>
 
 <div class="checklist-container">
-  <div style="display: flex;">
-    <h3>Welcome To Beyonk</h3>
+  <div style="display: grid;">
     <div class="close-popup" on:click={handlePopUp}>X</div>
+    <h3>Welcome To Beyonk</h3>
   </div>
   <p>
     Selling tickets has never been easier. Follow our simple checklist below to
