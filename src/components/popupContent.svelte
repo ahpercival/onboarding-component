@@ -5,9 +5,9 @@
 </script>
 
 <div class="checklist-container">
-  <div style="display: grid;">
-    <div class="close-popup" on:click={handlePopUp}>X</div>
+  <div class="popup-header">
     <h3>Welcome To Beyonk</h3>
+    <div class="close-popup" on:click={handlePopUp}>X</div>
   </div>
   <p>
     Selling tickets has never been easier. Follow our simple checklist below to
@@ -19,6 +19,11 @@
 <style>
   .checklist-container {
     padding: 0 1rem 2rem;
+  }
+
+  .popup-header {
+    display: grid;
+    grid-template-columns: auto auto;
   }
 
   .close-popup {
