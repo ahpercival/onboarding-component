@@ -1,45 +1,50 @@
 <script>
-  import ChecklistStore from "../stores/checklist-data";
-
-  let progressState;
-
-  ChecklistStore.subscribe((data) => {
-    progressState = data;
-  });
-
-  $: progessValues = Object.values(progressState);
+  export let progress;
+  const checklistData = [
+    {
+      key: "organisation",
+      label: "Complete your company profile",
+      text: "Upload your logo, pin your location, add a phone and description and you're all set!",
+    },
+    {
+      key: "adventure",
+      label: "Create your first experience",
+      text: "Follow the easy step-by-step guide to create a compelling experience that sells.",
+    },
+    {
+      key: "payment",
+      label: "Link your payment account",
+      text: "Connect via Stripe to get paid when you sell tickets.",
+    },
+    {
+      key: "policies",
+      label: "Set your cancellation policy",
+      text: "Choose between 'Flexible', 'Moderate' or set a Custom policy",
+    },
+  ];
 </script>
 
-{#each progessValues as { checked, label, text }}
-  <div class="checklist">
-    <label
-      class="checklist-label"
-      style="color: {!checked
-        ? 'hsla(173, 56%, 44%, 1)'
-        : 'hsla(0, 0%, 40%, 1)'}"
-    >
+{#each checklistData as { key, label, text }}
+  <div>
+    <label class="checklist-label" class:checked={progress[key]}>
       <input class="checkbox" type="checkbox" />
       {label}
-      <span class="tick" style="display: {!checked ? 'none' : 'block'};">
-        ✓</span
-      >
+      {#if progress[key]}
+        <span class="tick">✓</span>
+      {/if}
     </label>
-    <p
-      class="checklist-text"
-      style="color: {!checked ? 'hsla(0, 0%, 14%, 1)' : 'hsla(0, 0%, 48%, 1)'}"
-    >
-      {text}
-    </p>
+    <p class="checklist-text" class:checked={progress[key]}>{text}</p>
   </div>
 {/each}
 
 <style>
   .checklist-label {
     display: flex;
+    color: hsla(173, 56%, 44%, 1);
   }
 
-  .checklist-text {
-    font-size: 14px;
+  .checklist-label.checked {
+    color: hsla(0, 0%, 40%, 1);
   }
 
   .checkbox {
@@ -49,5 +54,13 @@
   .tick {
     margin: 0 0.5rem;
     color: hsla(173, 56%, 44%, 1);
+  }
+
+  .checklist-text {
+    font-size: 14px;
+  }
+
+  .checklist-text.checked {
+    color: hsla(0, 0%, 48%, 1);
   }
 </style>

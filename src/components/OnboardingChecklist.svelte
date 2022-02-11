@@ -20,7 +20,7 @@
   <div class="form-container">
     <div class="progress-popup" style="display: {display};">
       <ProgressBar {checklistLength} {completedItems} />
-      <PopUpContent {handlePopUp} />
+      <PopUpContent {handlePopUp} {progress} />
     </div>
   </div>
   <LaunchButton {handlePopUp} />

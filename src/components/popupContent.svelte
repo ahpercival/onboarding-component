@@ -1,6 +1,7 @@
 <script>
   import CheckBox from "../components/checkBox.svelte";
   export let handlePopUp;
+  export let progress;
 </script>
 
 <div class="checklist-container">
@@ -12,7 +13,7 @@
     Selling tickets has never been easier. Follow our simple checklist below to
     finish your set-up with Beyonk.
   </p>
-  <CheckBox />
+  <CheckBox {progress} />
 </div>
 
 <style>
