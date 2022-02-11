@@ -1,8 +1,8 @@
 <script>
   import { progressStore } from "../stores.js";
-  import LaunchButton from "../components/launchButton.svelte";
-  import ProgressBar from "../components/progressBar.svelte";
-  import PopUpContent from "../components/popupContent.svelte";
+  import LaunchButton from "./LaunchButton.svelte";
+  import ProgressBar from "./ProgressBar.svelte";
+  import PopUpContent from "./PopupContent.svelte";
 
   export let progress;
 
