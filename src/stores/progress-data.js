@@ -1,16 +1,5 @@
-import { readable } from "svelte/store";
+import { writable } from "svelte/store";
 
-let onboardingProgress = {
-  progress: {
-    adventure: false,
-    onboarded: false,
-    organisation: false,
-    payment: false,
-    policies: false,
-    terms: false,
-  },
-};
+const progressStore = writable({});
 
-const ProgressStore = readable(onboardingProgress);
-
-export default ProgressStore;
+export { progressStore };
