@@ -1,10 +1,10 @@
 <script>
-  import CheckBox from "../components/checkBox.svelte";
-  export let handlePopUp = () => {};
+  import CheckList from "./CheckList.svelte"
+  export let handlePopUp;
 </script>
 
 <div class="checklist-container">
-  <div style="display: flex;">
+  <div class="popup-header">
     <h3>Welcome To Beyonk</h3>
     <div class="close-popup" on:click={handlePopUp}>X</div>
   </div>
@@ -12,12 +12,17 @@
     Selling tickets has never been easier. Follow our simple checklist below to
     finish your set-up with Beyonk.
   </p>
-  <CheckBox />
+  <CheckList />
 </div>
 
 <style>
   .checklist-container {
     padding: 0 1rem 2rem;
+  }
+
+  .popup-header {
+    display: grid;
+    grid-template-columns: auto auto;
   }
 
   .close-popup {

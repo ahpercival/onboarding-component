@@ -1,33 +1,40 @@
 <script>
-  import ProgressBar from "../components/progressBar.svelte";
-  import LaunchButton from "../components/launchButton.svelte";
-  import PopupContent from "../components/popupContent.svelte";
-  import ProgressStore from "../stores/progress-data";
+  import { progressStore } from "../stores.js";
+  import LaunchButton from "./LaunchButton.svelte";
+  import ProgressBar from "./ProgressBar.svelte";
+  import PopUpContent from "./PopupContent.svelte";
 
-  let progressData;
+  export let progress;
 
-  ProgressStore.subscribe((data) => {
-    progressData = data;
-  });
+  progressStore.set(progress);
 
-  let onboarded = !progressData.progress.onboarded ? "block" : "none";
+  const { adventure, onboarded, organisation, payment, policies } = progress;
+  const checklistItems = [adventure, organisation, payment, policies];
+  const checklistLength = checklistItems.length;
+  const completedItems = checklistItems.filter((item) => !!item).length;
+
   let display = "none";
-  let handlePopUp = () => {
+
+  const handlePopUp = () => {
     display === "none" ? (display = "block") : (display = "none");
   };
 </script>
 
-<div style="display: {onboarded};">
+<div class:onboarding-complete={onboarded}>
   <div class="form-container">
     <div class="progress-popup" style="display: {display};">
-      <ProgressBar />
-      <PopupContent {handlePopUp} />
+      <ProgressBar {checklistLength} {completedItems} />
+      <PopUpContent {handlePopUp} />
     </div>
   </div>
   <LaunchButton {handlePopUp} />
 </div>
 
 <style>
+  .onboarding-complete {
+    display: none;
+  }
+
   .form-container {
     z-index: 9;
     position: fixed;
