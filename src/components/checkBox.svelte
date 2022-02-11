@@ -39,7 +39,6 @@
 
 <style>
   .checklist-label {
-    display: flex;
     color: hsla(173, 56%, 44%, 1);
   }
 
