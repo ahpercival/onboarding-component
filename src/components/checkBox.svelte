@@ -1,5 +1,6 @@
 <script>
-  export let progress;
+  import { progressStore } from "../stores/progress-data";
+
   const checklistData = [
     {
       key: "organisation",
@@ -26,14 +27,14 @@
 
 {#each checklistData as { key, label, text }}
   <div>
-    <label class="checklist-label" class:checked={progress[key]}>
+    <label class="checklist-label" class:checked={$progressStore[key]}>
       <input class="checkbox" type="checkbox" />
       {label}
-      {#if progress[key]}
+      {#if $progressStore[key]}
         <span class="tick">✓</span>
       {/if}
     </label>
-    <p class="checklist-text" class:checked={progress[key]}>{text}</p>
+    <p class="checklist-text" class:checked={$progressStore[key]}>{text}</p>
   </div>
 {/each}
 

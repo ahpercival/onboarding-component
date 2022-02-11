@@ -1,9 +1,13 @@
 <script>
+  import { progressStore } from "../stores/progress-data";
   import LaunchButton from "../components/launchButton.svelte";
   import ProgressBar from "../components/progressBar.svelte";
   import PopUpContent from "../components/popupContent.svelte";
 
   export let progress;
+
+  progressStore.set(progress);
+
   const { adventure, onboarded, organisation, payment, policies } = progress;
   const checklistItems = [adventure, organisation, payment, policies];
   const checklistLength = checklistItems.length;
@@ -20,7 +24,7 @@
   <div class="form-container">
     <div class="progress-popup" style="display: {display};">
       <ProgressBar {checklistLength} {completedItems} />
-      <PopUpContent {handlePopUp} {progress} />
+      <PopUpContent {handlePopUp} />
     </div>
   </div>
   <LaunchButton {handlePopUp} />
