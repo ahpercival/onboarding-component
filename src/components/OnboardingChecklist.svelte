@@ -1,33 +1,32 @@
 <script>
-  import ProgressBar from "../components/progressBar.svelte";
   import LaunchButton from "../components/launchButton.svelte";
-  import PopupContent from "../components/popupContent.svelte";
-  import ProgressStore from "../stores/progress-data";
+  import ProgressBar from "../components/progressBar.svelte";
+  import PopUpContent from "../components/popupContent.svelte";
 
-  let progressData;
+  export let progress;
 
-  ProgressStore.subscribe((data) => {
-    progressData = data;
-  });
-
-  let onboarded = !progressData.progress.onboarded ? "block" : "none";
   let display = "none";
+
   let handlePopUp = () => {
     display === "none" ? (display = "block") : (display = "none");
   };
 </script>
 
-<div style="display: {onboarded};">
+<div class:onboarding-complete={progress.onboarded}>
   <div class="form-container">
     <div class="progress-popup" style="display: {display};">
       <ProgressBar />
-      <PopupContent {handlePopUp} />
+      <PopUpContent {handlePopUp} />
     </div>
   </div>
   <LaunchButton {handlePopUp} />
 </div>
 
 <style>
+  .onboarding-complete {
+    display: none;
+  }
+
   .form-container {
     z-index: 9;
     position: fixed;
