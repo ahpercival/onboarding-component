@@ -1,4 +1,6 @@
-# Run Onboarding Checklist Component
+# Onboarding Checklist Component
+
+## To Run:
 
 ```bash
 npm install
