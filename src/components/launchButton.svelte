@@ -1,5 +1,5 @@
 <script>
-  export let handlePopUp = () => {};
+  export let handlePopUp;
 </script>
 
 <div class="button-container">
