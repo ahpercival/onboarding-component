@@ -1,5 +1,5 @@
 <script>
-  import { progressStore } from "../stores/progress-data";
+  import { progressStore } from "../stores.js";
 
   const checklistData = [
     {

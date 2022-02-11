@@ -1,5 +1,5 @@
 <script>
-  import { progressStore } from "../stores/progress-data";
+  import { progressStore } from "../stores.js";
   import LaunchButton from "../components/launchButton.svelte";
   import ProgressBar from "../components/progressBar.svelte";
   import PopUpContent from "../components/popupContent.svelte";
