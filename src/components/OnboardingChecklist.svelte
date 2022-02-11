@@ -4,18 +4,22 @@
   import PopUpContent from "../components/popupContent.svelte";
 
   export let progress;
+  const { adventure, onboarded, organisation, payment, policies } = progress;
+  const checklistItems = [adventure, organisation, payment, policies];
+  const checklistLength = checklistItems.length;
+  const completedItems = checklistItems.filter((item) => !!item).length;
 
   let display = "none";
 
-  let handlePopUp = () => {
+  const handlePopUp = () => {
     display === "none" ? (display = "block") : (display = "none");
   };
 </script>
 
-<div class:onboarding-complete={progress.onboarded}>
+<div class:onboarding-complete={onboarded}>
   <div class="form-container">
     <div class="progress-popup" style="display: {display};">
-      <ProgressBar />
+      <ProgressBar {checklistLength} {completedItems} />
       <PopUpContent {handlePopUp} />
     </div>
   </div>
