@@ -1,20 +1,14 @@
 <script>
   import { progressStore } from "../stores.js";
   import LaunchButton from "./LaunchButton.svelte";
-  import ProgressBar from "./ProgressBar.svelte";
   import PopUpContent from "./PopupContent.svelte";
 
   export let progress;
 
   progressStore.set(progress);
 
-  const { adventure, onboarded, organisation, payment, policies } = progress;
-  const checklistItems = [adventure, organisation, payment, policies];
-  const checklistLength = checklistItems.length;
-  const completedItems = checklistItems.filter((item) => !!item).length;
-
+  const { onboarded } = progress;
   let display = "none";
-
   const handlePopUp = () => {
     display === "none" ? (display = "block") : (display = "none");
   };
@@ -23,8 +17,7 @@
 <div class:onboarding-complete={onboarded}>
   <div class="form-container">
     <div class="progress-popup" style="display: {display};">
-      <ProgressBar {checklistLength} {completedItems} />
-      <PopUpContent {handlePopUp} />
+      <PopUpContent {handlePopUp} {progress} />
     </div>
   </div>
   <LaunchButton {handlePopUp} />
