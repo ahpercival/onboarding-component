@@ -38,7 +38,7 @@
 
   .progress-popup {
     max-width: 500px;
-    background-color: hsla(224, 58%, 96%, 1);
+    background-color: #FFF;
     font-family: "Cabin", "Trebuchet MS", Roboto, Helvetica, Arial, sans-serif;
     color: hsla(0, 0%, 14%, 1);
     box-shadow: 2px 5px 5px lightgrey;
