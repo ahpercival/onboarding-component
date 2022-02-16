@@ -15,7 +15,7 @@
 <div class="checklist-container">
   <div class="popup-header">
     <h3>Welcome To Beyonk</h3>
-    <div class="close-popup" on:click={handlePopUp}>X</div>
+    <div class="close-popup" on:click={handlePopUp}>&#10005</div>
   </div>
   <p>
     Selling tickets has never been easier. Follow our simple checklist below to
@@ -38,11 +38,9 @@
   .close-popup {
     border: none;
     background-color: transparent;
-    font-family: "Cabin", "Trebuchet MS", Roboto, Helvetica, Arial, sans-serif;
-    font-weight: bolder;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin: auto 1rem auto auto;
-    color: black;
+    color: hsla(173, 56%, 44%, 1);
   }
 
   .close-popup:hover {
