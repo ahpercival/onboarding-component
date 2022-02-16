@@ -33,10 +33,12 @@
   <div>
     <label class="checklist-label" class:checked={$progressStore[key]}>
       <input class="checkbox" type="checkbox" />
-      <a rel="prefetch" title={label} href={url}>{label}</a>
       {#if $progressStore[key]}
-        <span class="tick">✓</span>
+        <span class="checkbox-icon" class:tick={$progressStore[key]}>✓</span>
+        {:else}
+        <span class="checkbox-icon">x</span>
       {/if}
+      <a rel="prefetch" title={label} href={url}>{label}</a>
     </label>
     <p class="checklist-text" class:checked={$progressStore[key]}>{text}</p>
   </div>
@@ -57,8 +59,12 @@
     display: none;
   }
 
-  .tick {
+  .checkbox-icon {
     margin: 0 0.5rem;
+    color: hsla(0, 0%, 40%, 1);
+  }
+
+  .tick {
     color: hsla(173, 56%, 44%, 1);
   }
   
