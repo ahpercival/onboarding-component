@@ -6,30 +6,34 @@
       key: "organisation",
       label: "Complete your company profile",
       text: "Upload your logo, pin your location, add a phone and description and you're all set!",
+      url: "profile/organisation?backTo=/"
     },
     {
       key: "adventure",
       label: "Create your first experience",
       text: "Follow the easy step-by-step guide to create a compelling experience that sells.",
+      url: "event/create?backTo=/"
     },
     {
       key: "payment",
       label: "Link your payment account",
       text: "Connect via Stripe to get paid when you sell tickets.",
+      url: "profile/payment-details?backTo=/"
     },
     {
       key: "policies",
       label: "Set your cancellation policy",
       text: "Choose between 'Flexible', 'Moderate' or set a Custom policy",
+      url: "profile/terms?backTo=/"
     },
   ];
 </script>
 
-{#each checklistData as { key, label, text }}
+{#each checklistData as { key, label, text, url }}
   <div>
     <label class="checklist-label" class:checked={$progressStore[key]}>
       <input class="checkbox" type="checkbox" />
-      {label}
+      <a rel="prefetch" title={label} href={url}>{label}</a>
       {#if $progressStore[key]}
         <span class="tick">✓</span>
       {/if}
@@ -39,11 +43,13 @@
 {/each}
 
 <style>
-  .checklist-label {
+  .checklist-label a {
     color: hsla(173, 56%, 44%, 1);
+    text-decoration: none;
+    cursor: pointer;
   }
 
-  .checklist-label.checked {
+  .checklist-label.checked a {
     color: hsla(0, 0%, 40%, 1);
   }
 
