@@ -61,11 +61,7 @@
     margin: 0 0.5rem;
     color: hsla(173, 56%, 44%, 1);
   }
-
-  .checklist-text {
-    font-size: 14px;
-  }
-
+  
   .checklist-text.checked {
     color: hsla(0, 0%, 48%, 1);
   }

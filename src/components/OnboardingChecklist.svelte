@@ -50,6 +50,8 @@
     color: hsla(0, 0%, 14%, 1);
     box-shadow: 2px 5px 5px lightgrey;
     margin: 0 auto;
+    border: solid hsla(173, 56%, 44%, 1);
+    font-size: 14px;
   }
 
   @media only screen and (max-width: 600px) {
