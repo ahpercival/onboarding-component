@@ -102,5 +102,6 @@
   .checklist-text {
     color: hsla(0, 0%, 48%, 1);
     margin: 0 0.5rem;
+    width: 100%;
   }
 </style>
