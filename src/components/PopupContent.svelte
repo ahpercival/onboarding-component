@@ -17,22 +17,23 @@
     <h3>Welcome To Beyonk</h3>
     <div class="close-popup" on:click={handlePopUp}>&#10005</div>
   </div>
-  <p>
-    Selling tickets has never been easier. Follow our simple checklist below to
-    finish your set-up with Beyonk.
-  </p>
-  <ProgressBar {checklistLength} {completedItems} />
-  <CheckList />
+  <div class="popup-body">
+    <p>
+      Selling tickets has never been easier. Follow our simple checklist below to
+      finish your set-up with Beyonk.
+    </p>
+    <ProgressBar {checklistLength} {completedItems} />
+    <CheckList />
+  </div>
 </div>
 
 <style>
-  .checklist-container {
-    padding: 0 1rem 2rem;
-  }
-
   .popup-header {
     display: grid;
     grid-template-columns: auto auto;
+    padding: 0 1rem;
+    background-color: hsla(173, 56%, 44%, 1);
+    color: #FFF;
   }
 
   .close-popup {
@@ -40,7 +41,6 @@
     background-color: transparent;
     font-size: 1.2rem;
     margin: auto 1rem auto auto;
-    color: hsla(173, 56%, 44%, 1);
   }
 
   .close-popup:hover {
@@ -48,8 +48,13 @@
     cursor: pointer;
   }
 
+  .popup-body {
+    padding: 0 1rem 2rem;
+  }
+
   @media only screen and (max-width: 600px) {
-    .checklist-container {
+    .popup-header,
+    .popup-body {
       padding: 0.5rem;
     }
   }
