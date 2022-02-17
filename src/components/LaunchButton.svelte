@@ -12,7 +12,7 @@
   .button-container {
     z-index: 9;
     position: fixed;
-    bottom: 2rem;
+    top: 0;
     width: 100%;
   }
 

@@ -31,7 +31,7 @@
   .form-container {
     z-index: 9;
     position: fixed;
-    top: 3rem;
+    top: 4rem;
     width: 100%;
     margin: 0;
   }
