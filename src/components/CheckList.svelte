@@ -40,13 +40,13 @@
       {/if}
       <a rel="prefetch" title={label} href={url}>{label}</a>
     </label>
-    <p class="checklist-text" class:checked={$progressStore[key]}>{text}</p>
+    <p class="checklist-text">{text}</p>
   </div>
 {/each}
 
 <style>
   .checklist-label a {
-    color: hsla(173, 56%, 44%, 1);
+    color: hsla(224, 59%, 53%, 1);
     text-decoration: none;
     cursor: pointer;
   }
@@ -68,7 +68,7 @@
     color: hsla(173, 56%, 44%, 1);
   }
   
-  .checklist-text.checked {
+  .checklist-text {
     color: hsla(0, 0%, 48%, 1);
   }
 </style>
