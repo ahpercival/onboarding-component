@@ -2,10 +2,8 @@
   export let handlePopUp;
 </script>
 
-<div class="button-container">
-  <div class="popup-button" on:click={handlePopUp}>
+<div class="button-container" on:click={handlePopUp}>
     &#128075; Getting started
-  </div>
 </div>
 
 <style>
@@ -14,25 +12,13 @@
     position: fixed;
     top: 0;
     width: 100%;
-  }
-
-  .popup-button {
-    z-index: 9;
-    background-color: hsla(173, 56%, 44%, 1);
+    background-color: hsla(224, 59%, 53%, 1);
     color: #fff;
-    border: solid 1px hsla(173, 56%, 44%, 1);
-    border-radius: 0.2rem;
     font-size: 1rem;
-    padding: 0.4rem 1rem;
     font-family: "Cabin", "Trebuchet MS", Roboto, Helvetica, Arial, sans-serif;
-    margin: 0 auto;
+    padding: 0.4rem 1rem;
     height: 1.7rem;
-    max-width: 9rem;
-  }
-
-  .popup-button:hover {
+    text-align: center;
     cursor: pointer;
-    background-color: transparent;
-    color: hsla(173, 56%, 44%, 1);
   }
 </style>
