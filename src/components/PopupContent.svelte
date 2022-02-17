@@ -50,6 +50,7 @@
 
   .popup-body {
     padding: 0 1rem 2rem;
+    line-height: 1.5;
   }
 
   @media only screen and (max-width: 600px) {
