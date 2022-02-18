@@ -19,7 +19,7 @@
 <style>
   .progress-bar-container {
     display: grid;
-    grid-template-columns: 10% 90%;
+    grid-template-columns: 2rem auto;
     padding: 5px 0;
   }
 

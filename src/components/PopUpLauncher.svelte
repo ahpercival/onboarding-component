@@ -1,10 +1,17 @@
 <script>
+    import ProgressBar from "./ProgressBar.svelte"
   export let handlePopUp;
 </script>
 
 <div class="launcher-container" on:click={handlePopUp}>
   <div class="launcher-content">
-    &#128075; Welcome To Beyonk! Click here to get started
+    <div></div>
+    <div>
+      &#128075; Welcome To Beyonk! Click here to get started
+    </div>
+    <div class="launcher-progress">
+      <ProgressBar />
+    </div>
   </div>
 </div>
 
@@ -25,5 +32,17 @@
   .launcher-content {
     font-size: 0.8rem;
     margin: 0.7rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+
+  .launcher-progress {
+    width: 75%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .launcher-progress {
+      display: none;
+    }
   }
 </style>
