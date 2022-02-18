@@ -6,7 +6,7 @@
 <div class="launcher-container" on:click={handlePopUp}>
   <div class="launcher-content">
     <div></div>
-    <div>
+    <div class="launcher-title">
       &#128075; Welcome To Beyonk! Click here to get started
     </div>
     <div class="launcher-progress">
@@ -34,7 +34,11 @@
     margin: 0.7rem;
     display: grid;
     grid-template-columns: 20% auto 20%;
+  }
+  
+  .launcher-title {
     font-weight: 600;
+    padding: 3px 0;
   }
 
   .launcher-progress {
