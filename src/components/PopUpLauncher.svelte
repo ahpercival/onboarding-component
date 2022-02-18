@@ -34,6 +34,7 @@
     margin: 0.7rem;
     display: grid;
     grid-template-columns: 20% auto 20%;
+    font-weight: 600;
   }
 
   .launcher-progress {
