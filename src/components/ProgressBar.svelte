@@ -1,6 +1,11 @@
 <script>
-  export let checklistLength;
-  export let completedItems;
+  import { get } from 'svelte/store'
+  import { progressStore } from "../stores.js";
+  const progress = get(progressStore)
+  const { adventure, organisation, payment, policies } = progress;
+  const checklistItems = [adventure, organisation, payment, policies];
+  const checklistLength = checklistItems.length;
+  const completedItems = checklistItems.filter((item) => !!item).length;
   let value = (100 / checklistLength) * completedItems;
 </script>
 
