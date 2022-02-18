@@ -4,9 +4,8 @@
   export let handlePopUp;
 </script>
 
-<div class="checklist-container">
   <div class="popup-header">
-    <h3>Welcome To Beyonk</h3>
+    <h3>Welcome To Beyonk!</h3>
     <div class="close-popup" on:click={handlePopUp}>&#10005</div>
   </div>
   <div class="popup-body">
@@ -17,7 +16,6 @@
     <ProgressBar />
     <CheckList />
   </div>
-</div>
 
 <style>
   .popup-header {
@@ -26,6 +24,15 @@
     padding: 0 1rem;
     background-color: hsla(173, 56%, 44%, 1);
     color: #FFF;
+    height: 2.3rem;
+    font-size: 0.8rem;
+  }
+
+  .popup-header h3 {
+    font-size: 14px;
+    padding: 0;
+    margin: 0.5rem 0rem;
+    font-weight: 600;
   }
 
   .close-popup {
@@ -36,7 +43,7 @@
   }
 
   .close-popup:hover {
-    color: hsla(0, 0%, 40%, 1);
+    color: hsla(224, 58%, 96%, 1);
     cursor: pointer;
   }
 
