@@ -33,7 +33,7 @@
     font-size: 0.8rem;
     margin: 0.7rem;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 20% auto 20%;
   }
 
   .launcher-progress {
@@ -41,6 +41,10 @@
   }
 
   @media only screen and (max-width: 600px) {
+    .launcher-content {
+      display: block;
+    }
+
     .launcher-progress {
       display: none;
     }
