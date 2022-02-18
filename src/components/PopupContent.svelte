@@ -1,15 +1,7 @@
 <script>
-  import { progressStore } from "../stores.js";
   import ProgressBar from "./ProgressBar.svelte"
   import CheckList from "./CheckList.svelte"
-
   export let handlePopUp;
-  export let progress;
-
-  const { adventure, organisation, payment, policies } = progress;
-  const checklistItems = [adventure, organisation, payment, policies];
-  const checklistLength = checklistItems.length;
-  const completedItems = checklistItems.filter((item) => !!item).length;
 </script>
 
 <div class="checklist-container">
@@ -22,7 +14,7 @@
       Selling tickets has never been easier. Follow our simple checklist below to
       finish your set-up with Beyonk.
     </p>
-    <ProgressBar {checklistLength} {completedItems} />
+    <ProgressBar />
     <CheckList />
   </div>
 </div>

@@ -1,6 +1,6 @@
 <script>
   import { progressStore } from "../stores.js";
-  import LaunchButton from "./LaunchButton.svelte";
+  import PopUpLauncher from "./PopUpLauncher.svelte";
   import PopUpContent from "./PopupContent.svelte";
 
   export let progress;
@@ -20,7 +20,7 @@
       <PopUpContent {handlePopUp} {progress} />
     </div>
   </div>
-  <LaunchButton {handlePopUp} />
+  <PopUpLauncher {handlePopUp} />
 </div>
 
 <style>
@@ -31,7 +31,7 @@
   .form-container {
     z-index: 9;
     position: fixed;
-    top: 3rem;
+    top: 4rem;
     width: 100%;
     margin: 0;
   }
