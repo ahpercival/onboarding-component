@@ -38,7 +38,7 @@
   .close-popup {
     border: none;
     background-color: transparent;
-    font-size: 1.2rem;
+    font-size: 16px;
     margin: auto 1rem auto auto;
   }
 
