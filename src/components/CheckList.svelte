@@ -108,7 +108,13 @@
   .checklist-text {
     color: hsla(0, 0%, 48%, 1);
     margin: 0 0.5rem;
-    width: 100%;
-    padding: 1rem 0;
+    max-width: 90%;
+    padding: 1rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .checklist-text {
+      padding: .5rem;
+    }
   }
 </style>
