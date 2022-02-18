@@ -1,5 +1,4 @@
 <script>
-  import { progressStore } from "../stores.js";
   import ProgressBar from "./ProgressBar.svelte"
   import CheckList from "./CheckList.svelte"
 
