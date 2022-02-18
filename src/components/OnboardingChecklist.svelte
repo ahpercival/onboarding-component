@@ -32,8 +32,7 @@
     z-index: 9;
     position: fixed;
     top: 4rem;
-    width: 100%;
-    margin: 0;
+    right: 1.5rem;
   }
 
   .progress-popup {
@@ -48,6 +47,12 @@
   }
 
   @media only screen and (max-width: 600px) {
+    .form-container {
+      width: 100%;
+      margin: 0;
+      right: 0;
+    }
+
     .progress-popup {
       max-width: 90%;
       margin: 0 auto;
