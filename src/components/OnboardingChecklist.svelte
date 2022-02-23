@@ -17,7 +17,7 @@
 <div class:onboarding-complete={onboarded}>
   <div class="form-container">
     <div class="progress-popup" style="display: {display};">
-      <PopUpContent {handlePopUp} {progress} />
+      <PopUpContent {handlePopUp} />
     </div>
   </div>
   <PopUpLauncher {handlePopUp} />
