@@ -1,5 +1,5 @@
 <script>
-    import ProgressBar from "./ProgressBar.svelte"
+  import ProgressBar from "./ProgressBar.svelte"
   export let handlePopUp;
 </script>
 
